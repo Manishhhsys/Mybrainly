@@ -4,7 +4,6 @@ const ObjectId=mongoose.Schema.ObjectId;
 
 
 const UserSchema=new Schema({
-    _id:ObjectId,
     username:{
         unique:true,
         type:String,
