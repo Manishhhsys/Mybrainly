@@ -26,9 +26,7 @@ function CheckJwt(req:Request,res:Response,next:NextFunction):any{
         })
     }else{
         let token=Userauth.split(" ")[1];
-        console.log(token)
         let VaildAuth=jwt.verify(token,process.env.JWT_SECRET_Key!) as JWTpatten
-        console.log(VaildAuth)
         req.userId=VaildAuth.userId
         next();
     }
