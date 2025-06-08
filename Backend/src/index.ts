@@ -1,8 +1,10 @@
 import express from "express"
 import cors from "cors"
 import signuproute from "./routes/signuproute";
+import sigininroute from "./routes/sigininroutes"
 import mongoose from "mongoose";
 import * as dotenv from 'dotenv';
+import CtnAdd from "./routes/Content";
 const app=express();
 
 dotenv.config();
@@ -12,6 +14,8 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/api/v1/signup",signuproute)
+app.use("/api/v1/siginin",sigininroute)
+app.use("/api/v1/content",CtnAdd)
 
 
 app.listen(process.env._PORT!,()=>{
