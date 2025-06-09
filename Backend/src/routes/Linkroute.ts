@@ -10,6 +10,8 @@ const router=express.Router();
 
 export const shareAdd=router.post("/",CheckJwt,async (req,res):Promise<any>=>{
     try{
+        const share=req.body.share;
+        if(share){
         const existinguser=await Link.findOne({
             userid:req.userId
         })
@@ -28,7 +30,20 @@ export const shareAdd=router.post("/",CheckJwt,async (req,res):Promise<any>=>{
                 hash:response.hash
             })
         }
-
+    }else{
+        const response=await Link.deleteOne({
+            userid:req.userId
+        })
+        if(response)
+        return res.status(statusCode.Success).json({
+            message:"Link Deleted"
+        })
+        else{
+            return res.status(statusCode.Forbidden).json({
+                message:"Share Code Doesnt Existed"
+            })
+        }
+    }
     }catch(e){
         console.log(e);
         return res.status(statusCode.Internal_Server_Error).json({
