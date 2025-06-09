@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+--color-persian-indigo-50: #f4f3ff;
+--color-persian-indigo-100: #ebeafd;
+--color-persian-indigo-200: #dad7fd;
+--color-persian-indigo-300: #beb7fb;
+--color-persian-indigo-400: #9e8ef7;
+--color-persian-indigo-500: #7d61f1;
+--color-persian-indigo-600: #6b40e7;
+--color-persian-indigo-700: #5c2ed3;
+--color-persian-indigo-800: #4d26b1;
+--color-persian-indigo-900: #412191;
+--color-persian-indigo-950: #2d1674;
+
+
+}
