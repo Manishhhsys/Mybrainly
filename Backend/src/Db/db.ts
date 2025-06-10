@@ -19,8 +19,6 @@ const UserSchema=new Schema({
 const TageSchema=new Schema({
     title:{
         type:String,
-        required:true,
-        unique:true
     }
 })
 export const User=mongoose.model("User",UserSchema)

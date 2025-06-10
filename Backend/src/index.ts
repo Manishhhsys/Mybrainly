@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/api/v1/signup",signuproute);
-app.use("/api/v1/siginin",sigininroute);
+app.use("/api/v1/signin",sigininroute);
 app.use("/api/v1/content",CtnAdd);
 app.use("/api/v1/content",Ctnget);
 app.use("/api/v1/content",CntDelete);

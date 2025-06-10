@@ -63,7 +63,7 @@ export const Ctnget=router.get("/get",async (req,res):Promise<any>=>{
 
 export const CntDelete=router.delete("/delete",async (req,res):Promise<any>=>{
     try{
-        const {contentid}=req.body;
+        const contentid=req.body;
         const response=await Content.deleteOne({
             userid:req.userId,
             _id:contentid
